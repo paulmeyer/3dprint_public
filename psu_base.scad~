@@ -1,17 +1,17 @@
 
 // select to create the psu_base or the bottom plate
 
-create_base = true;
-create_bottom_plate = true;
-create_shim = false;
+//create_base = true;
+//create_bottom_plate = false;
+//create_shim = false;
 
 //create_base = false;
 //create_bottom_plate = true;
 //create_shim = false;
 
-//create_base = false;
-//create_bottom_plate = false;
-//create_shim = true;
+create_base = false;
+create_bottom_plate = false;
+create_shim = true;
 
 
 
@@ -217,8 +217,11 @@ shim_height = 190;
 //**************
 //* draw base
 
-if(create_base && create_bottom_plate){
+if(create_base && create_bottom_plate && create_shim){
   psu_base(create_base, create_bottom_plate);
+
+  shim();
+
 } else if (create_base) {
   difference(){
     psu_base(create_base, create_bottom_plate);
